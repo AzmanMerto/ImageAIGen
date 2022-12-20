@@ -7,17 +7,49 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @ObservedObject var APICallerModel = APICaller()
+    @State var text = ""
+    @State var image: UIImage?
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack{
+                Spacer()
+                if let image = image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 250)
+                } else {
+                    Text("Type prompt to generate image!")
+                }
+                Spacer()
+                
+                TextField("Type",text: $text)
+                    .padding()
+            
+                Button("Generate") {
+                    if !text.trimmingCharacters(in: .whitespaces).isEmpty {
+                        Task{
+                            let result = await APICallerModel.generateImage(prompt: text)
+                            if result == nil {
+                            }
+                            self.image = result
+                        }
+                        }
+                    }
+                }
+                
+            }
+            .padding()
+            .navigationTitle("hey")
+            .onAppear{
+                APICallerModel.setup()
+                }
         }
-        .padding()
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

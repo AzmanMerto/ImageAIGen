@@ -11,6 +11,8 @@
 		34EDA6E52951DE2900123B0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EDA6E42951DE2900123B0E /* ContentView.swift */; };
 		34EDA6E72951DE2B00123B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34EDA6E62951DE2B00123B0E /* Assets.xcassets */; };
 		34EDA6EA2951DE2B00123B0E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34EDA6E92951DE2B00123B0E /* Preview Assets.xcassets */; };
+		34EDA6F22951DE6800123B0E /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 34EDA6F12951DE6800123B0E /* OpenAIKit */; };
+		34EDA6F62951E1ED00123B0E /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EDA6F52951E1ED00123B0E /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		34EDA6E42951DE2900123B0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		34EDA6E62951DE2B00123B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34EDA6E92951DE2B00123B0E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34EDA6F52951E1ED00123B0E /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34EDA6F22951DE6800123B0E /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 				34EDA6E42951DE2900123B0E /* ContentView.swift */,
 				34EDA6E62951DE2B00123B0E /* Assets.xcassets */,
 				34EDA6E82951DE2B00123B0E /* Preview Content */,
+				34EDA6F52951E1ED00123B0E /* APICaller.swift */,
 			);
 			path = ImageAIGen;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = ImageAIGen;
+			packageProductDependencies = (
+				34EDA6F12951DE6800123B0E /* OpenAIKit */,
+			);
 			productName = ImageAIGen;
 			productReference = 34EDA6DF2951DE2900123B0E /* ImageAIGen.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 34EDA6D62951DE2900123B0E;
+			packageReferences = (
+				34EDA6F02951DE6800123B0E /* XCRemoteSwiftPackageReference "OpenAIKit" */,
+			);
 			productRefGroup = 34EDA6E02951DE2900123B0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34EDA6E52951DE2900123B0E /* ContentView.swift in Sources */,
+				34EDA6F62951E1ED00123B0E /* APICaller.swift in Sources */,
 				34EDA6E32951DE2900123B0E /* ImageAIGenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +351,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34EDA6F02951DE6800123B0E /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34EDA6F12951DE6800123B0E /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34EDA6F02951DE6800123B0E /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34EDA6D72951DE2900123B0E /* Project object */;
 }
